@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/page-employee.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script th:src="@{/js/bootstrap.bundle.min.js}"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <title>Employee</title>
+</head>
+
+<body>
+<!--Body part-->
+<div class="container-fluid site-wrapper">
+    <!--Header-menu-part-->
+    <div class="container-fluid header-wrapper " id="header">
+        <div class="container">
+            <!--Title part-->
+            <div class="title-wrapper">
+                <div class="title-wrapper-inner">
+                    <div class="title">Aromatherapy - Massage</div>
+                    <div class="subtitle">Welcome to this website</div>
+                </div>
+            </div>
+
+            <!--Menu part-->
+            <div class="navbar navbar-compact">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <div class="nav-collapse collapse">
+                            <ul class="nav" id="topMenu" data-submenu="horizontal">
+                                <li><a href="/home">Welcome</a></li>
+                                <li><a href="/service">Therapy and Massage</a></li>
+                                <li><a href="/price">Price List</a></li>
+                                <li><a href="/employee">Employees</a></li>
+                                <li><a href="contact">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Content part-->
+    <div class="container-fluid content-wrapper" id="content">
+        <div class="container">
+            <div class="row-fluid content-inner">
+                <!--Left-content part-->
+                <div id="left" class="span9">
+                    <div class="wrapper ">
+                        <div class="content" th:each="employee : ${employeeList}">
+                            <div class="section article">
+                                <div class="heading">
+                                    <h2 th:text="${employee.name}"></h2>
+                                </div>
+                                <div class="content">
+                                    <div class="img-simple span3 pull-left">
+                                        <div class="image">
+                                            <img th:src="${employee.imgUrl}"/>
+                                        </div>
+                                    </div>
+                                    <h3 th:text="${employee.role}"></h3>
+                                    <p th:text="${employee.content}"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--Right-content part-->
+                <div id="right" class="span3">
+                    <div class="sidebar">
+                        <div class="wrapper share-box">
+                            <!--Heading-->
+                            <div class="heading">
+                                <h4>Share this page</h4>
+                            </div>
+
+                            <!--Content-->
+                            <div class="content">
+                                <ul>
+                                    <li>
+                                        <a id="share-facebook"><i class="fa-brands fa-facebook"></i>
+                                            <span>Share on Facebook</span></a>
+                                    </li>
+                                    <li>
+                                        <a id="share-twitter">
+                                            <i class="fa-brands fa-twitter"></i>
+                                            <span>Share on Twitter</span></a>
+                                    </li>
+                                    <li>
+                                        <a id="share-google-plus">
+                                            <i class="fa-brands fa-google-plus-g"></i>
+                                            <span>Share on Google+</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="container-fluid footer-wrapper" id="footer">
+        <div class="container">
+            <!--Info of creator-->
+            <div class="footer-info">
+                <div class="footer-powered-by">
+                    <a rel="nofollow" href="http://www.simplesite.com/">Created with SimpleSite</a>
+                </div>
+            </div>
+
+            <!--Counter viewer-->
+            <div class="footer-page-counter" style="display: block;">
+                <span class="footer-page-counter-item">0</span>
+                <span class="footer-page-counter-item">3</span>
+                <span class="footer-page-counter-item">8</span>
+                <span class="footer-page-counter-item">3</span>
+                <span class="footer-page-counter-item">9</span>
+                <span class="footer-page-counter-item">2</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
